@@ -1,0 +1,4 @@
+requests
+paramiko
+wmi
+pywinrm

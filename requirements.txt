@@ -1,13 +1,19 @@
-# Requirements for Automated Network Inventory
+# Network Inventory Scanner Requirements
+# Install with: pip install -r requirements.txt
 
-# Basic requirements
-ipaddress
-sqlite3
+# Core dependencies
+requests>=2.28.0
+paramiko>=2.9.0
 
-# Additional packages that might be useful
-pysnmp
-python-nmap
-netmiko
-paramiko
-requests
-flask
+# Windows specific
+wmi>=1.5.1
+pywinrm>=0.4.2
+
+# Optional but recommended
+colorama>=0.4.4
+psutil>=5.9.0
+
+# For future features (not used yet but good to have)
+python-dotenv>=0.19.0
+schedule>=1.1.0
+click>=8.0.0

@@ -1,0 +1,54 @@
+{
+  "network_settings": {
+    "network_range": "192.168.1.1-254",
+    "timeout": 2,
+    "threads": 50,
+    "scan_interval": 300
+  },
+  
+  "alert_settings": {
+    "cooldown_time": 300,
+    "alert_levels": {
+      "info": true,
+      "warning": true,
+      "critical": true,
+      "resolved": true
+    },
+    "alert_channels": ["discord", "slack"]
+  },
+  
+  "discord_webhook": "https://discord.com/api/webhooks/YOUR_WEBHOOK_HERE/YOUR_TOKEN_HERE",
+  "slack_webhook": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+  
+  "email_settings": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "email_user": "your_email@gmail.com",
+    "email_password": "your_app_password",
+    "email_recipient": "admin@company.com"
+  },
+  
+  "device_credentials": {
+    "windows_domain": "YOUR_DOMAIN",
+    "windows_admin_user": "administrator",
+    "windows_admin_password": "change_me",
+    "linux_ssh_user": "admin", 
+    "linux_ssh_password": "change_me",
+    "linux_ssh_key_path": "/path/to/private/key"
+  },
+  
+  "health_checks": {
+    "enabled": true,
+    "check_interval": 600,
+    "disk_threshold": 90,
+    "memory_threshold": 90,
+    "cpu_threshold": 80
+  },
+  
+  "logging": {
+    "log_level": "INFO",
+    "log_file": "network_scanner.log",
+    "log_to_console": true
+  }
+}

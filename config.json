@@ -1,14 +1,113 @@
 {
-  "network_ranges": [
-    "192.168.1.0/24",
-    "10.0.0.0/24"
-  ],
-  "scan_interval_minutes": 60,
-  "snmp_community": "public",
-  "credentials": {
-    "ssh_username": "",
-    "ssh_password": ""
+  "network_settings": {
+    "network_range": "192.168.1.1-254",
+    "timeout": 2,
+    "threads": 50,
+    "scan_interval": 300,
+    "ping_timeout": 1000,
+    "port_scan_timeout": 1,
+    "common_ports": [
+      22,
+      23,
+      53,
+      80,
+      135,
+      139,
+      443,
+      445,
+      993,
+      995,
+      3389,
+      5432,
+      3306
+    ]
   },
-  "output_format": "json",
-  "database_path": "network_inventory.db"
+  "alert_settings": {
+    "cooldown_time": 300,
+    "alert_levels": {
+      "info": true,
+      "warning": true,
+      "critical": true,
+      "resolved": true
+    },
+    "alert_channels": [
+      "discord",
+      "slack"
+    ],
+    "auto_resolve": true,
+    "new_device_alert": true,
+    "offline_threshold": 2
+  },
+  "discord_webhook": "https://discord.com/api/webhooks/YOUR_WEBHOOK_HERE/YOUR_TOKEN_HERE",
+  "slack_webhook": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+  "email_settings": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "use_tls": true,
+    "email_user": "your_email@gmail.com",
+    "email_password": "your_app_password",
+    "email_recipient": "admin@company.com"
+  },
+  "device_credentials": {
+    "windows_domain": "YOUR_DOMAIN",
+    "windows_admin_user": "administrator",
+    "windows_admin_password": "change_me",
+    "linux_ssh_user": "admin",
+    "linux_ssh_password": "change_me",
+    "linux_ssh_key_path": "/path/to/private/key"
+  },
+  "health_checks": {
+    "enabled": true,
+    "check_interval": 600,
+    "disk_threshold": 90,
+    "memory_threshold": 90,
+    "cpu_threshold": 80,
+    "load_threshold": 2.0,
+    "service_check": true,
+    "uptime_check": true
+  },
+  "logging": {
+    "log_level": "INFO",
+    "log_file": "network_scanner.log",
+    "max_log_size": "10MB",
+    "backup_count": 5,
+    "log_to_console": true
+  },
+  "database": {
+    "enabled": false,
+    "type": "sqlite",
+    "path": "network_inventory.db",
+    "backup_interval": 3600
+  },
+  "reporting": {
+    "generate_reports": true,
+    "report_interval": 86400,
+    "report_format": [
+      "json",
+      "html"
+    ],
+    "email_reports": false,
+    "report_recipient": "manager@company.com"
+  },
+  "security": {
+    "max_login_attempts": 3,
+    "lockout_time": 300,
+    "allowed_ips": [],
+    "blocked_ips": [],
+    "encryption_key": "change_me_to_secure_key"
+  },
+  "advanced_settings": {
+    "deep_scan": false,
+    "os_detection": true,
+    "vendor_detection": true,
+    "port_scan_depth": "quick",
+    "parallel_health_checks": 5,
+    "retry_count": 3,
+    "excluded_ips": [
+      "192.168.1.1"
+    ],
+    "included_subnets": []
+  },
+  "network_range": "192.168.1.1-254"
 }
