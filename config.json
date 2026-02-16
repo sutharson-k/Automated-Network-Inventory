@@ -109,5 +109,8 @@
     ],
     "included_subnets": []
   },
-  "network_range": "192.168.1.1-254"
+  "network_range": "192.168.1.1-254",
+  "timeout": 2,
+  "threads": 50,
+  "scan_interval": 300
 }
