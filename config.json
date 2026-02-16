@@ -1,0 +1,14 @@
+{
+  "network_ranges": [
+    "192.168.1.0/24",
+    "10.0.0.0/24"
+  ],
+  "scan_interval_minutes": 60,
+  "snmp_community": "public",
+  "credentials": {
+    "ssh_username": "",
+    "ssh_password": ""
+  },
+  "output_format": "json",
+  "database_path": "network_inventory.db"
+}

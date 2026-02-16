@@ -1,0 +1,13 @@
+# Requirements for Automated Network Inventory
+
+# Basic requirements
+ipaddress
+sqlite3
+
+# Additional packages that might be useful
+pysnmp
+python-nmap
+netmiko
+paramiko
+requests
+flask
